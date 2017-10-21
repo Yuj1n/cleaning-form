@@ -1,0 +1,66 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body > #root {
+    height: 100vh;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
+#formContainer {
+    background-color: rgba(79, 77, 74, 0.5);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 6px;
+}
+
+#formContainer > h1 {
+    color: white;
+    margin: 10px;
+    font-size: 16pt;
+}
+
+#formContainer > form {
+    display: flex;
+    flex-direction: column;
+}
+
+#formContainer > form > input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 3px;
+    font-size: 12pt;
+}
+
+#formContainer > form > select {
+    border: none;
+    padding: 10px;
+    background-color: white;
+    cursor: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 5px;
+    font-size: 12pt;
+}
+
+#formContainer > form > #submitButton {
+    padding: 15px;
+    background-color: #038ED6;
+    border: none;
+    margin: 15px;
+    color: white;
+    font-size: 13pt;
+}

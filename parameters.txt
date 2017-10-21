@@ -1,0 +1,6 @@
+first_name = First Name
+email = Email
+phone = Phone Number
+service_id = Bedrooms
+pricing_parameter[1] = Bathrooms
+frequency_id = Cleaning Frequency
