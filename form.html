@@ -18,6 +18,15 @@
 
       const BOND_CLEAN = "6";
 
+      const FREQUENCY_NAMES = {
+        1: "One Time",
+        4: "Weekly",
+        3: "Every 2 Weeks",
+        5: "Every 3 Weeks",
+        2: "Monthly",
+        6: "Bond Clean/Move In Move Out"
+      };
+
       class Container extends React.Component {
 
         render() {
@@ -86,19 +95,31 @@
           event.preventDefault();
         };
 
+        // Triggers when the form is submitted
         onBookClick = () => {
 
-           /*
-          // TODO: Fix up
-          //window.location = "http://snapclean.com.au/booking-page/?frequency=2&phone=0455111222&first_name=Jared";
+          if (!this.inputsComplete()) return;
 
-          if (this.state.frequency !== BOND_CLEAN) {
+          fetch('https://script.google.com/macros/s/AKfycbwVLBJyzQmJexJsKopeMiy9athlJieCYgeRVOPJrHJmBNzLx7X4/exec', {
+            method: 'post',
+            body: JSON.stringify({
+              firstName: this.state.firstName,
+              email: this.state.email,
+              phoneNumber: this.state.phoneNumber,
+              frequency: FREQUENCY_NAMES[this.state.frequency],
+              bedrooms: this.state.bedrooms,
+              bathrooms: this.state.bathrooms
+            })
+          }).then(response => response.text()).then(text => {
+            // TODO: Uncomment
+            //let newLocation = this.createRedirectLocation();
+            //window.location = newLocation;
+          });
 
-          } else {
+        };
 
-          }
-          */
-
+        // Sanitizes the inputs, adds warnings to state if they are incomplete
+        inputsComplete = () => {
           let warnings = [];
 
           if (this.state.firstName === "") {
@@ -117,34 +138,19 @@
             this.setState({
               warnings: warnings
             });
-            return;
+            return false;
+          } else {
+            return true;
           }
-
-          // TODO: Uncomment
-          //let newLocation = this.createRedirectLocation();
-          //window.location = newLocation;
-
-          fetch('https://script.google.com/macros/s/AKfycbwVLBJyzQmJexJsKopeMiy9athlJieCYgeRVOPJrHJmBNzLx7X4/exec', {
-            method: 'post',
-            body: JSON.stringify({
-              firstName: this.state.firstName,
-              email: this.state.email,
-              phoneNumber: this.state.phoneNumber,
-              frequency: this.state.frequency,
-              bedrooms: this.state.bedrooms,
-              bathrooms: this.state.bathrooms
-            })
-          }).then(response => response.text()).then(text => {
-            console.log(text);
-          });
-
         };
 
         // TODO: Need to account for bond cleaning
+        // Creates a URL to redirect to based on parameters
         createRedirectLocation = () => {
           return `http://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=${this.state.frequency}`;
         };
 
+        // Gets the style for inputs, so it will show a red line if they are un-filled
         getInputStyle = (name) => {
           if (this.state.warnings.indexOf(name) > - 1) {
             return {
