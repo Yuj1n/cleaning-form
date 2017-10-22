@@ -97,9 +97,7 @@
 
         // Triggers when the form is submitted
         onBookClick = () => {
-
           if (!this.inputsComplete()) return;
-
           fetch('https://script.google.com/macros/s/AKfycbwVLBJyzQmJexJsKopeMiy9athlJieCYgeRVOPJrHJmBNzLx7X4/exec', {
             method: 'post',
             body: JSON.stringify({
@@ -110,12 +108,10 @@
               bedrooms: this.state.bedrooms,
               bathrooms: this.state.bathrooms
             })
-          }).then(response => response.text()).then(text => {
-            // TODO: Uncomment
-            //let newLocation = this.createRedirectLocation();
-            //window.location = newLocation;
+          }).then(response => {
+            let newLocation = this.createRedirectLocation();
+            window.location = newLocation;
           });
-
         };
 
         // Sanitizes the inputs, adds warnings to state if they are incomplete
@@ -144,10 +140,13 @@
           }
         };
 
-        // TODO: Need to account for bond cleaning
         // Creates a URL to redirect to based on parameters
         createRedirectLocation = () => {
-          return `http://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=${this.state.frequency}`;
+          if (this.state.frequency === BOND_CLEAN) {
+            return `http://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=1&extra[20]=1`;
+          } else {
+            return `http://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=${this.state.frequency}`;
+          }
         };
 
         // Gets the style for inputs, so it will show a red line if they are un-filled
