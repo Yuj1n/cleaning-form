@@ -122,11 +122,12 @@
             warnings.push("firstName");
           }
 
+          // TODO: Add validation for phone number
           if (this.state.phoneNumber === "") {
             warnings.push("phoneNumber");
           }
 
-          if (this.state.email === "") {
+          if (this.state.email === "" || !this.validateEmail(this.state.email)) {
             warnings.push("email");
           }
 
@@ -138,6 +139,7 @@
           } else {
             return true;
           }
+
         };
 
         // Creates a URL to redirect to based on parameters
@@ -148,6 +150,18 @@
             return `http://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=${this.state.frequency}`;
           }
         };
+
+        // Validates an email address
+        validateEmail(email) {
+          var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return regex.test(email);
+        }
+
+        // Validates a phone number(simple)
+        validatePhoneNumber(number) {
+          var regex = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+          return regex.test(number);
+        }
 
         // Gets the style for inputs, so it will show a red line if they are un-filled
         getInputStyle = (name) => {
