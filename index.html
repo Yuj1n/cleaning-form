@@ -56,9 +56,9 @@
             firstName: "",
             email: "",
             phoneNumber: "",
-            bedrooms: "1",
+            bedrooms: "12",
             bathrooms: "1",
-            frequency: "1",
+            frequency: "3",
             warnings: []
           };
         }
@@ -152,6 +152,7 @@
         };
 
         // Creates a URL to redirect to based on parameters
+        // TODO: Change to HTTPS URL
         createRedirectLocation = () => {
           if (this.state.frequency === BOND_CLEAN) {
             return `http://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=1&extra[20]=1`;
