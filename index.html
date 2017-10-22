@@ -18,13 +18,22 @@
 
       const BOND_CLEAN = "6";
 
-      const FREQUENCY_NAMES = {
+      const FREQUENCY_VALUES = {
         1: "One Time",
         4: "Weekly",
         3: "Every 2 Weeks",
         5: "Every 3 Weeks",
         2: "Monthly",
         6: "Bond Clean/Move In Move Out"
+      };
+
+      const BEDROOM_VALUES = {
+        12: 1,
+        2: 2,
+        8: 3,
+        9: 4,
+        5: 5,
+        6: 6
       };
 
       class Container extends React.Component {
@@ -104,8 +113,8 @@
               firstName: this.state.firstName,
               email: this.state.email,
               phoneNumber: this.state.phoneNumber,
-              frequency: FREQUENCY_NAMES[this.state.frequency],
-              bedrooms: this.state.bedrooms,
+              frequency: FREQUENCY_VALUES[this.state.frequency],
+              bedrooms: BEDROOM_VALUES[this.state.bedrooms],
               bathrooms: this.state.bathrooms
             })
           }).then(response => {
