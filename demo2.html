@@ -109,6 +109,75 @@ class="no-js ie ie8 lt-ie9" lang="en-US"> <![endif]-->
             padding: 0 !important;
             margin: 0 !important;
         }
+
+        .holder2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            height: 100%;
+        }
+
+        .coverHolder {
+            min-height: 900px;
+        }
+
+        #dealTitle {
+            color: rgb(255, 255, 255);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 22pt;
+        }
+
+        #dealDetails {
+            color: rgb(255, 255, 255);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-size: 16pt;
+        }
+
+        #dealTerms {
+            color: rgb(255, 255, 255);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-size: 9pt;
+            padding-top: 5px;
+        }
+
+        #cleaningFormContainer {
+            padding: 25px;
+        }
+
+        .dealContainer {
+            max-width: 600px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .holder2 {
+                flex-direction: column;
+            }
+
+            #dealTitle {
+                font-size: 14pt;
+                text-align: center;
+            }
+
+            #dealDetails {
+                font-size: 12pt;
+                text-align: center;
+            }
+
+            #dealTerms {
+                font-size: 8pt;
+                text-align: center;
+            }
+
+            .coverHolder {
+                min-height: 800px;
+            }
+        }
     </style>
     <script>!function (f, b, e, v, n, t, s) {
                                        if (f.fbq) return; n = f.fbq = function () {
@@ -221,17 +290,16 @@ class="no-js ie ie8 lt-ie9" lang="en-US"> <![endif]-->
                 </nav>
             </div>
             <div class="dm-template dm-cover custom-block" component-id="309" dm-template="custom.cover_cover8_6811271545">
-                <section class="cover parallax left middle  " style="background-color: rgb(0, 0, 0); min-height: 1091px; max-height: 1091px;">
-                    <div class="container-holder">
+                <section class="cover coverHolder" style="background-color: rgb(0, 0, 0);">
+                    <div class="container-holder" style="height: 100%; width: 100%">
                         <div class="container">
-                            <div class="holder" style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex: 1; height: 100%;">
-                                <div class="content" style="transform: translateY(0px); opacity: 1;">
-                                    <h3 style=" color: rgb(255, 255, 255);  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  font-weight: bold;  font-style: normal; font-size: 22pt;"
-                                        class=" font-size-4  line-height-4 "> Looking for the best home cleaning service on the Sunshine Coast?</h3>
-                                    <p style=" color: rgb(255, 255, 255);  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  font-weight: bold;  font-style: normal; font-size: 18pt;"
-                                        class=" font-size-4  line-height-4 "> Receive 20% off your first booking!</p>
+                            <div class="holder2">
+                                <div class="dealContainer">
+                                    <h3 id="dealTitle">Looking for the best home cleaning service on the Sunshine Coast?</h3>
+                                    <p id="dealDetails">Receive 20% off your first booking!</p>
+                                    <p id="dealTerms">* The discount will automatically apply at the booking page. First 10 customers only.</p>
                                 </div>
-                                <div id="cleaningFormContainer" style="padding: 30px;">
+                                <div id="cleaningFormContainer">
                                     <div id="react-container">
 
                                     </div>
