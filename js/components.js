@@ -42,7 +42,7 @@ var Container = function (_React$Component) {
     value: function render() {
       return React.createElement(
         "div",
-        { id: "container", style: this.props.style },
+        { id: "reactContainer", style: this.props.style },
         React.createElement(CleaningForm, this.props)
       );
     }
@@ -174,7 +174,7 @@ var CleaningForm = function (_React$Component2) {
     _this2.renderOptionA = function () {
       return React.createElement(
         "div",
-        { className: "selectionContainer", id: "selectionContainer1" },
+        { className: "selectionContainer" },
         _this2.renderNameInput(),
         _this2.renderEmailInput(),
         _this2.renderPhoneNumberInput(),
@@ -187,7 +187,7 @@ var CleaningForm = function (_React$Component2) {
     _this2.renderOptionB = function () {
       return React.createElement(
         "div",
-        { className: "selectionContainer", id: "selectionContainer2" },
+        { className: "selectionContainer" },
         React.createElement(
           "div",
           { className: "selectionRow" },
@@ -208,7 +208,7 @@ var CleaningForm = function (_React$Component2) {
     _this2.renderOptionC = function () {
       return React.createElement(
         "div",
-        { className: "selectionContainer", id: "selectionContainer2" },
+        { className: "selectionContainer" },
         React.createElement(
           "div",
           { className: "selectionRow" },
@@ -396,6 +396,9 @@ var CleaningForm = function (_React$Component2) {
     return _this2;
   }
 
+  // Handles a submit event(enter key, button click etc.)
+
+
   // Triggers when the form is submitted
 
 
@@ -437,14 +440,17 @@ var CleaningForm = function (_React$Component2) {
     // Renders option B (3x2)
 
 
-    // Renders option C
+    // Renders option C (2x3)
+
+
+    // Renders the inputs and selects depending on the option specified
 
   }, {
     key: "render",
     value: function render() {
       return React.createElement(
         "div",
-        { id: "formContainer" },
+        { id: "bookingFormContainer" },
         React.createElement(
           "h1",
           { id: "formTitle" },

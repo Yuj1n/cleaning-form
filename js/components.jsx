@@ -21,7 +21,7 @@ const BEDROOM_VALUES = {
 class Container extends React.Component {
   render() {
     return (
-      <div id="container" style={this.props.style}>
+      <div id="reactContainer" style={this.props.style}>
         <CleaningForm {...this.props} />
       </div>
     );
@@ -143,9 +143,9 @@ class CleaningForm extends React.Component {
   // TODO: Potentially change to HTTPS URL
   createRedirectLocation = () => {
     if (this.state.frequency === BOND_CLEAN) {
-      return `http://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=1&extra[20]=1`;
+      return `https://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=1&extra[20]=1`;
     } else {
-      return `http://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=${this.state.frequency}`;
+      return `https://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=${this.state.frequency}`;
     }
   };
 
@@ -185,7 +185,7 @@ class CleaningForm extends React.Component {
   // Renders option A (1x1)
   renderOptionA = () => {
     return (
-      <div className="selectionContainer" id="selectionContainer1">
+      <div className="selectionContainer">
         {this.renderNameInput()}
         {this.renderEmailInput()}
         {this.renderPhoneNumberInput()}
@@ -199,7 +199,7 @@ class CleaningForm extends React.Component {
   // Renders option B (3x2)
   renderOptionB = () => {
     return (
-      <div className="selectionContainer" id="selectionContainer2">
+      <div className="selectionContainer">
         <div className="selectionRow">
           {this.renderNameInput()}
           {this.renderEmailInput()}
@@ -217,7 +217,7 @@ class CleaningForm extends React.Component {
   // Renders option C (2x3)
   renderOptionC = () => {
     return (
-      <div className="selectionContainer" id="selectionContainer2">
+      <div className="selectionContainer">
         <div className="selectionRow">
           {this.renderNameInput()}
           {this.renderPhoneNumberInput()}
@@ -325,7 +325,7 @@ class CleaningForm extends React.Component {
 
   render() {
     return (
-      <div id="formContainer">
+      <div id="bookingFormContainer">
         <h1 id="formTitle">Get an online quote in seconds</h1>
         <form onSubmit={this.handleSubmit}>
           {this.renderSelectionItems()}
