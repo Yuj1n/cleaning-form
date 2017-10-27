@@ -224,15 +224,17 @@ class="no-js ie ie8 lt-ie9" lang="en-US"> <![endif]-->
                 <section class="cover parallax left middle  " style="background-color: rgb(0, 0, 0); min-height: 1091px; max-height: 1091px;">
                     <div class="container-holder">
                         <div class="container">
-                            <div class="holder" style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex: 1;">
+                            <div class="holder" style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex: 1; height: 100%;">
                                 <div class="content" style="transform: translateY(0px); opacity: 1;">
                                     <h3 style=" color: rgb(255, 255, 255);  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  font-weight: bold;  font-style: normal; font-size: 22pt;"
                                         class=" font-size-4  line-height-4 "> Looking for the best home cleaning service on the Sunshine Coast?</h3>
                                     <p style=" color: rgb(255, 255, 255);  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  font-weight: bold;  font-style: normal; font-size: 18pt;"
                                         class=" font-size-4  line-height-4 "> Receive 20% off your first booking!</p>
                                 </div>
-                                <div id="react-container">
+                                <div id="cleaningFormContainer" style="padding: 30px;">
+                                    <div id="react-container">
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -240,7 +242,7 @@ class="no-js ie ie8 lt-ie9" lang="en-US"> <![endif]-->
                     <script>
                         window.onload = function () {
                             ReactDOM.render(
-                                React.createElement(Container, { discountCode: "20OFF", style: { backgroundColor: 'transparent', padding: 80 } }),
+                                React.createElement(CleaningForm, { discountCode: "20OFF", style: { backgroundColor: 'transparent' } }),
                                 document.getElementById('react-container')
                             );
                         };
