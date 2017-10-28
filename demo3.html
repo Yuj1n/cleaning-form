@@ -89,7 +89,7 @@
     <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
     <script src="./js/components.js"></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="componentStyles.css" />
     <link rel='https://api.w.org/' href='http://snapclean.com.au/wp-json/' />
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://snapclean.com.au/xmlrpc.php?rsd" />
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://snapclean.com.au/wp-includes/wlwmanifest.xml" />
@@ -226,15 +226,15 @@
                 <div class="article-content__main">
                     <script>
                         window.onload = function () {
-                            var subheaderSections = document.getElementsByClassName('subheader');
+                            var subheaderSections = document.getElementsByClassName('subheader__content');
                             if (subheaderSections.length > 0) {
                                 var section = subheaderSections[0];
                                 var formContainer = document.createElement('div');
                                 formContainer.id = "subheaderFormContainer";
-                                formContainer.style = "padding: 20px; display: flex; justify-content: center; align-items: center;";
-                                section.appendChild(formContainer);
+                                formContainer.style = "padding-bottom: 20px; display: flex; justify-content: center; align-items: center;";
+                                section.insertBefore(formContainer, section.childNodes[2]);
                                 ReactDOM.render(
-                                    React.createElement(CleaningForm, { discountCode: "20OFF", style: { backgroundColor: 'transparent' } }),
+                                    React.createElement(CleaningForm, { style: { backgroundColor: 'transparent' } }),
                                     document.getElementById('subheaderFormContainer')
                                 );
                             }
