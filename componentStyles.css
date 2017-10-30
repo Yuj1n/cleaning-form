@@ -108,3 +108,68 @@
     }
 
 }
+
+.holder2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
+.coverHolder {
+    min-height: 900px;
+}
+
+#dealTitle {
+    color: rgb(255, 255, 255);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 22pt;
+}
+
+#dealDetails {
+    color: rgb(255, 255, 255);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 16pt;
+}
+
+#dealTerms {
+    color: rgb(255, 255, 255);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 9pt;
+    padding-top: 5px;
+}
+
+#cleaningFormContainer {
+    padding: 25px;
+}
+
+@media only screen and (max-width: 900px) {
+    .holder2 {
+        flex-direction: column;
+    }
+
+    #dealTitle {
+        font-size: 14pt;
+        text-align: center;
+    }
+
+    #dealDetails {
+        font-size: 12pt;
+        text-align: center;
+    }
+
+    #dealTerms {
+        font-size: 8pt;
+        text-align: center;
+    }
+
+    .coverHolder {
+        min-height: 800px;
+    }
+}
