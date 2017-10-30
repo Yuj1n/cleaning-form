@@ -213,14 +213,18 @@ http-equiv="X-UA-Compatible" content="IE=edge">
     </header>
     <main>
         <section class="subheader pv0" style="background-image: url('https://snapclean.com.au/wp-content/uploads/2017/10/Tilogy-copy-1.jpg')">
-            <div id="react-container" class="container">
+            <div class="container">
+                <div id="homeFormContainer">
+                    <div id="react-container">
 
+                    </div>
+                </div>
             </div>
         </section>
         <script>
             window.onload = function () {
                 ReactDOM.render(
-                    React.createElement(Container, { discountCode: "20OFF", style: { backgroundColor: 'transparent', paddingTop: 190, paddingBottom: 50 } }),
+                    React.createElement(CleaningForm, { style: { backgroundColor: 'transparent', paddingTop: 190, paddingBottom: 50 } }),
                     document.getElementById('react-container')
                 );
             };

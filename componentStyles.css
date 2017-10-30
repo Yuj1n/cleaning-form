@@ -172,4 +172,13 @@
     .coverHolder {
         min-height: 800px;
     }
+
+}
+
+#homeFormContainer {
+    padding-top: 190px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
