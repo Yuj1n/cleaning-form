@@ -284,7 +284,7 @@ http-equiv="X-UA-Compatible" content="IE=edge">
                     </div>
                 </div>
                 <div class="text-center pt+">
-                    <a href="https://snapclean.com.au/booking-page/" class="btn btn--primary">BOOK NOW</a>
+                    <a href="#homeFormContainer" class="btn btn--primary">BOOK NOW</a>
                 </div>
             </div>
         </section>
@@ -506,13 +506,20 @@ http-equiv="X-UA-Compatible" content="IE=edge">
             <div class="container text-center relative" data-live-edit-id="17-six_visible-six_title-six_link-six_placeholder" data-live-edit-fields="six_visible,six_title,six_link,six_placeholder"
                 data-live-edit-post_id="17">
                 <h2 class="type-uppercase h3">YOU’RE ONE STEP AWAY FROM A SPOTLESS AND CLEAN HOME</h2>
-                <form action="https://snapclean.com.au/booking-page/" method="get">
-                    <label>
-                        <input name="zip" type="text" class="input input--primary" placeholder="Enter your Postcode">
-                    </label>
-                    <button class="btn btn--primary type-bold">BOOK A CLEANING NOW</button>
-                </form>
+                <div id="postCodeFormContainer">
+                    <div id="react-container2">
+
+                    </div>
+                </div>
             </div>
+            <script>
+                window.onload = function () {
+                    ReactDOM.render(
+                        React.createElement(CleaningForm, { style: { backgroundColor: 'transparent' } }),
+                        document.getElementById('react-container2')
+                    );
+                };
+            </script>
         </section>
         <section class="partners">
             <div class="container relative" data-live-edit-id="17-seven_visible-seven_boxes" data-live-edit-fields="seven_visible,seven_boxes"
