@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>A Cleaning Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="./js/components.js"></script>
+    <link rel="stylesheet" href="componentStyles.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="video-container" style="width: 100%; height: 100%; overflow: hidden; position: absolute;">
+        <video autoplay muted loop playsinline style="min-width: 100%; min-height: 100%;">
+            <source src="video.mp4" type="video/mp4" />
+        </video>
+    </div>
+</body>
+
+</html>
