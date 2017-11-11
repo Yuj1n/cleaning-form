@@ -81,6 +81,109 @@
     -webkit-appearance: none;
 }
 
+#interactiveCheckList {
+    padding: 20px;
+    max-width: 900px;
+}
+
+#optionButtonsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#optionButtonsContainer .selectedButton {
+    padding: 15px;
+    background-color:#038ED6;
+    flex: 1;
+    color: white;
+    font-size: 12pt;
+    margin: 5px;
+    -webkit-appearance: none;
+    border-color: #038ED6;
+    border-width: 1px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+#optionButtonsContainer .hiddenButton {
+    padding: 15px;
+    background-color:white;
+    flex: 1;
+    color: grey;
+    font-size: 12pt;
+    margin: 5px;
+    -webkit-appearance: none;
+    border-color: #d3d3d3;
+    border-width: 1px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+#checkListsContainer {
+    padding: 20px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #E8EBED;
+}
+
+#checkListsContainer .checkListRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkListPage {
+    flex: 1;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.checkListPage h3 {
+    padding: 0px;
+    margin: 3px;
+    font-size: 12pt;
+}
+
+.checkListPage ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.checkListPage li {
+    padding: 7px;
+    font-size: 10pt;
+}
+
+.checkListPage li::before {
+    color: white;
+    content: "✔\fe0e";
+    background-color: #038ED6;
+    font-size: 5pt;
+    margin-right: 10px;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.checkListPage .notIncluded::before {
+    color: white;
+    content: '✘';
+    background-color: grey;
+    font-size: 5pt;
+    margin-right: 10px;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+#checkListContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #bookingFormContainer #submitContainer {
     padding: 12px;
 }
@@ -105,6 +208,26 @@
 
     #bookingFormContainer .textInput {
         font-size: 10pt;
+    }
+
+    #optionButtonsContainer .hiddenButton {
+        font-size: 9pt;
+        padding: 10px;
+        margin: 3px;
+    }
+
+    #optionButtonsContainer .selectedButton {
+        font-size: 9pt;
+        padding: 10px;
+        margin: 3px;
+    }
+
+    #checkListsContainer .checkListRow {
+        flex-direction: column;
+    }
+
+    .checkListPage li {
+        font-size: 8pt;
     }
 
 }

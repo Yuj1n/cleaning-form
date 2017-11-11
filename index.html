@@ -19,6 +19,10 @@
 
     body>#react-container {
       height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   </style>
 </head>
@@ -27,7 +31,7 @@
   <div id="react-container"></div>
   <script type="text/babel">
       ReactDOM.render(
-        <Container style={{backgroundColor: 'black'}} discountCode="20OFF" option="a" />,
+        <CleaningForm style={{backgroundColor: 'black'}} discountCode="20OFF" option="a" />,
         document.getElementById('react-container')
       );
   </script>

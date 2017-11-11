@@ -140,9 +140,9 @@
     <script src="https://yopify.com/api/yo/js/yo/0ade20a3458f36d41e743bfe658a1de4/bootstrap.js"></script>
     <div id="fb-root"></div>
     <script>(function (d, s, id) {
-                                       var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id))
-                                           return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4"; fjs.parentNode.insertBefore(js, fjs);
-                                   }(document, 'script', 'facebook-jssdk'));</script>
+            var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id))
+                return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4"; fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     <header class="header-main">
         <div class="container">
             <div class="justifize">
@@ -225,6 +225,184 @@
             <div class="container pt++">
                 <div class="article-content__main">
                     <script>
+
+                        var checkListPages = {
+                            ALWAYS_INCLUDED: {
+                                title: "Always Included",
+                                items: [
+                                    {
+                                        name: "$5,000,000 of public liability insurance to keep you and your belongings safe",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Unparalleled customer service by email, live-chat and telephone",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Great discounts for regular cleaning",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "SnapClean satisfaction guarantee",
+                                        types: ["regular", "deep", "move"]
+                                    }
+                                ]
+                            },
+                            ALL_AREAS: {
+                                title: "All Areas",
+                                items: [
+                                    {
+                                        name: "Dusting",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Empty Rubbish Bins",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Vaccum Carpets & Rugs",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Mop Floors",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Clean Mirrors",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Wipe Door Handles & Light Switches",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Dust Windows, Sills and Ledges",
+                                        types: ["regular", "deep", "move"]
+                                    }
+                                ]
+                            },
+                            KITCHEN: {
+                                title: "Kitchen",
+                                items: [
+                                    {
+                                        name: "Wipe Stove Top & Stove Fan",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Wipe Benchtops",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Clean Microwave(In & Out)",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Wipe Dishwasher",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Wipe Fridge(Exterior)",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Wipe Small Appliances",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Wipe Stools & Chairs",
+                                        types: ["regular", "deep", "move"]
+                                    }
+                                ]
+                            },
+                            BATHROOMS: {
+                                title: "Bathrooms",
+                                items: [
+                                    {
+                                        name: "Wipe Bathroom Cabinets(Exterior)",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Scrub & Clean Sinks",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Scrub & Clean Toilets",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Scrub & Clean Bath Tubs",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Scrub & Clean Showers",
+                                        types: ["regular", "deep", "move"]
+                                    }
+                                ]
+                            },
+                            BEDROOMS: {
+                                title: "Bedrooms",
+                                items: [
+                                    {
+                                        name: "Make Bed",
+                                        types: ["regular", "deep", "move"]
+                                    },
+                                    {
+                                        name: "Dust Furniture & Decorations",
+                                        types: ["regular", "deep", "move"]
+                                    }
+                                ]
+                            },
+                            OTHER: {
+                                title: "Other",
+                                items: [
+                                    {
+                                        name: "Wipe Baseboards",
+                                        types: ["deep", "move"]
+                                    },
+                                    {
+                                        name: "Extra Attention to Outside of Kitchen Appliances",
+                                        types: ["deep", "move"]
+                                    },
+                                    {
+                                        name: "Extra Attention to Shower & Bathroom",
+                                        types: ["deep", "move"]
+                                    },
+                                    {
+                                        name: "Interior Cabinet Cleaning",
+                                        types: ["move"]
+                                    },
+                                    {
+                                        name: "Inside Fridge",
+                                        types: ["move"]
+                                    },
+                                    {
+                                        name: "Inside Oven",
+                                        types: ["move"]
+                                    },
+                                    {
+                                        name: "Inside Windows",
+                                        types: ["move"]
+                                    },
+                                    {
+                                        name: "Walls",
+                                        types: ["move"]
+                                    },
+                                    {
+                                        name: "Carpets Cleaning",
+                                        types: []
+                                    },
+                                    {
+                                        name: "Pest Control",
+                                        types: []
+                                    },
+                                    {
+                                        name: "Blinds",
+                                        types: []
+                                    }
+                                ]
+                            }
+                        };
+
                         window.onload = function () {
                             var subheaderSections = document.getElementsByClassName('subheader__content');
                             if (subheaderSections.length > 0) {
@@ -238,9 +416,12 @@
                                     document.getElementById('subheaderFormContainer')
                                 );
                             }
+                            ReactDOM.render(
+                                React.createElement(InteractiveCheckList, { checkListPages: checkListPages }),
+                                document.getElementById('checkListContainer')
+                            );
                         };
                     </script>
-                    <h3 class="mb text-center" style="text-align: left;">PRICING</h3>
                     <h3 class="text-center" style="text-align: left;">Fixed Fee Home and Domestic Cleaning</h3>
                     <p class="text-center" style="text-align: left;">Living Rooms, Dining Rooms &amp; Laundries are all included!</p>
                     <p class="text-center" style="text-align: left;">Our fixed pricing makes everything straight forward. Just select how many bedrooms and bathrooms you
@@ -249,16 +430,7 @@
                         <em>NO MORE SURPRISE FEES! </em>
                     </p>
                     <p class="text-center" style="text-align: left;">The checklist below shows you what you can expect from our top class professional home and domestic cleaners.</p>
-                    <p class="text-center" style="text-align: left;">
-                        <strong>NOTE:</strong> All prices shown here are
-                        <strong>NOT</strong> yet Discounted.</p>
-                    <div class="figure">
-                        <img class="size-full wp-image-842 aligncenter" src="http://snapclean.com.au/wp-content/uploads/2017/10/asda.png" alt=""
-                            width="2482" height="575" srcset="http://snapclean.com.au/wp-content/uploads/2017/10/asda.png 2482w, http://snapclean.com.au/wp-content/uploads/2017/10/asda-300x70.png 300w, http://snapclean.com.au/wp-content/uploads/2017/10/asda-768x178.png 768w, http://snapclean.com.au/wp-content/uploads/2017/10/asda-1024x237.png 1024w"
-                            sizes="(max-width: 2482px) 100vw, 2482px" />
-                    </div>
-                    <p>*Studies and media rooms are classified as a bedroom for pricing purposes</p>
-                    <p>&nbsp;</p>
+                    <div id="checkListContainer"></div>
                     <h3 class="mb text-center">Regular Service Discount</h3>
                     <p class="text-center">Want to stay on top of your home cleaning duties? We offer great discounts for regular services:</p>
                     <h3 class="text-center" style="text-align: center;">Monthly: 10% OFF</h3>

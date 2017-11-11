@@ -341,3 +341,112 @@ class CleaningForm extends React.Component {
     );
   }
 }
+
+const CLEANING_TYPES = {
+  REGULAR: "regular",
+  DEEP: "deep",
+  MOVE: "move"
+};
+
+class InteractiveCheckList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentSelection: CLEANING_TYPES.REGULAR
+    };
+  }
+
+  render() {
+    return (
+      <div id="interactiveCheckList">
+        <div id="optionButtonsContainer">
+          <button
+            className={this.getButtonClass(CLEANING_TYPES.REGULAR)}
+            onClick={() => this.changeSelection(CLEANING_TYPES.REGULAR)}
+          >
+            REGULAR
+          </button>
+          <button
+            className={this.getButtonClass(CLEANING_TYPES.DEEP)}
+            onClick={() => this.changeSelection(CLEANING_TYPES.DEEP)}
+          >
+            DEEP
+          </button>
+          <button
+            className={this.getButtonClass(CLEANING_TYPES.MOVE)}
+            onClick={() => this.changeSelection(CLEANING_TYPES.MOVE)}
+          >
+            MOVE IN/OUT
+          </button>
+        </div>
+        {this.renderCheckListRows()}
+      </div>
+    );
+  }
+
+  renderCheckListRows = () => {
+    if (
+      this.props.checkListPages !== null &&
+      this.props.checkListPages !== undefined
+    ) {
+      return (
+        <div id="checkListsContainer">
+          <div className="checkListRow">
+            {this.renderCheckList(this.props.checkListPages.ALWAYS_INCLUDED)}
+            {this.renderCheckList(this.props.checkListPages.ALL_AREAS)}
+            {this.renderCheckList(this.props.checkListPages.KITCHEN)}
+          </div>
+          <div className="checkListRow">
+            {this.renderCheckList(this.props.checkListPages.BEDROOMS)}
+            {this.renderCheckList(this.props.checkListPages.BATHROOMS)}
+            {this.renderCheckList(this.props.checkListPages.OTHER)}
+          </div>
+        </div>
+      );
+    }
+  };
+
+  getButtonClass = type => {
+    return this.state.currentSelection === type
+      ? "selectedButton"
+      : "hiddenButton";
+  };
+
+  changeSelection = type => {
+    this.setState({
+      currentSelection: type
+    });
+  };
+
+  renderCheckList = page => {
+    return (
+      <div className="checkListPage">
+        <h3>{page.title}</h3>
+        <div>
+          <ul>
+            {this.renderItemsList(page.items)}
+          </ul>
+        </div>
+      </div>
+    );
+  };
+
+  renderItemsList = items => {
+    let views = [];
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      views.push(
+        <li className={this.getListItemClass(item)} key={`item-${i}`}>
+          {item.name}
+        </li>
+      );
+    }
+    return views;
+  };
+
+  getListItemClass = item => {
+    return item.types.includes(this.state.currentSelection)
+      ? ""
+      : "notIncluded";
+  };
+}
