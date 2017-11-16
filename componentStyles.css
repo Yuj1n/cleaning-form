@@ -188,6 +188,23 @@
     padding: 12px;
 }
 
+#headerVideoContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -2;
+}
+
+#headerVideoShade {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
 @media only screen and (max-width: 600px) {
 
     #bookingFormContainer .selectionRow {
