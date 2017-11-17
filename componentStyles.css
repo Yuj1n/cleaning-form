@@ -205,7 +205,6 @@
     z-index: -1;
 }
 
-
 #reactMapContainer {
     margin-bottom: 80px;
 }
@@ -261,6 +260,10 @@
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+#mapOptionsContainer #locationSelector select option {
+    background-color: #038ED6;
 }
 
 #mapOptionsContainer select.minimal {
