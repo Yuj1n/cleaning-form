@@ -205,9 +205,7 @@
     z-index: -1;
 }
 
-#reactMapContainer {
-    margin-bottom: 80px;
-}
+#reactMapContainer {}
 
 #mapContainer {
     width: 100%;
