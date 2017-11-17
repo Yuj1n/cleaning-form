@@ -262,9 +262,8 @@
   -moz-appearance: none;
 }
 
-#mapOptionsContainer #locationSelector select option {
+#mapOptionsContainer option {
     background-color: #038ED6;
-    color: #038ED6;
 }
 
 #mapOptionsContainer select.minimal {
