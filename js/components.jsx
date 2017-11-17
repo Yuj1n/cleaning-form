@@ -140,7 +140,6 @@ class CleaningForm extends React.Component {
   };
 
   // Creates a URL to redirect to based on parameters
-  // TODO: Potentially change to HTTPS URL
   createRedirectLocation = () => {
     if (this.state.frequency === BOND_CLEAN) {
       return `https://snapclean.com.au/booking-page/?first_name=${this.state.firstName}&email=${this.state.email}&phone=${this.state.phoneNumber}&service_id=${this.state.bedrooms}&pricing_parameter[1]=${this.state.bathrooms}&frequency_id=1&extra[20]=1`;
@@ -384,6 +383,7 @@ class InteractiveCheckList extends React.Component {
     );
   }
 
+  // Renders rows for checklist
   renderCheckListRows = () => {
     if (
       this.props.checkListPages !== null &&
@@ -406,6 +406,7 @@ class InteractiveCheckList extends React.Component {
     }
   };
 
+  // Gets the class for the selection buttons depending on the current selection
   getButtonClass = type => {
     return this.state.currentSelection === type
       ? "selectedButton"
@@ -448,5 +449,114 @@ class InteractiveCheckList extends React.Component {
     return item.types.includes(this.state.currentSelection)
       ? ""
       : "notIncluded";
+  };
+}
+
+class InteractiveMap extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedLocation: props.mapPages.brisbane
+    };
+  }
+
+  componentDidMount = () => {
+    this.checkForPreselection();
+  };
+
+  // Checks if there is a preselection based on URL parameters
+  checkForPreselection = () => {
+    let params = this.getUrlParams();
+    if ("mapSelection" in params) {
+      let selection = params.mapSelection;
+      // Loops through pages
+      Object.values(this.props.mapPages).forEach(page => {
+        // Checks if the key is same as designated parameter
+        if (page.key == selection) {
+          this.setState({
+            selectedLocation: page
+          });
+        }
+      });
+    }
+  };
+
+  render() {
+    return (
+      <div id="mapContainer">
+        <div id="mapOptionsContainer">
+          {this.renderDropDown()}
+        </div>
+        <div id="mapFrameContainer">
+          <iframe
+            id="mapFrame"
+            src={this.state.selectedLocation.map}
+            width="100%"
+            height="900"
+            frameBorder="0"
+          />
+        </div>
+      </div>
+    );
+  }
+
+  // Gets parameters from the location URL
+  getUrlParams = () => {
+    let hashes = location.search
+      .slice(location.search.indexOf("?") + 1)
+      .split("&");
+    let params = {};
+    hashes.map(hash => {
+      let [key, val] = hash.split("=");
+      params[key] = decodeURIComponent(val);
+    });
+    return params;
+  };
+
+  // Renders the dropdown element
+  renderDropDown = () => {
+    return (
+      <div>
+        <select
+          className="minimal"
+          id="locationSelector"
+          onChange={this.onDropdownChange}
+          value={this.state.selectedLocation.key}
+        >
+          {this.renderDropdownOptions()}
+        </select>
+      </div>
+    );
+  };
+
+  // Renders children from the dropdown from the map pages
+  renderDropdownOptions = () => {
+    let options = [];
+    Object.values(this.props.mapPages).forEach((page, index) => {
+      options.push(
+        <option value={page.key} key={`option-${index}`}>
+          {page.location}
+        </option>
+      );
+    });
+    return options;
+  };
+
+  // Event for when the dropdown has been changed
+  onDropdownChange = event => {
+    let value = event.target.value;
+    Object.values(this.props.mapPages).forEach((page, index) => {
+      if (page.key == value) {
+        this.setState({
+          selectedLocation: page
+        });
+      }
+    });
+  };
+
+  onOptionPress = page => {
+    this.setState({
+      selectedLocation: page
+    });
   };
 }

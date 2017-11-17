@@ -205,6 +205,75 @@
     z-index: -1;
 }
 
+#mapContainer {
+    width: 100%;
+}
+
+#mapFrameContainer {
+    width: 100%;
+    overflow: hidden;
+    height: 450px;
+    background-color: #d3d3d3;
+}
+
+#mapFrame {
+    border:0;
+    margin-top: -150px;
+}
+
+#mapOptionsContainer {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #038ED6;
+}
+
+#mapOptionsContainer button:focus {
+    outline: 0;
+}
+
+#mapOptionsContainer .mapDivider {
+    background-color: white;
+    width: 1px;
+    height: 30px;
+}
+
+#mapOptionsContainer #locationSelector {
+  background-color: transparent;
+  border: thin solid white;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  color: white;
+
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#mapOptionsContainer select.minimal {
+    background-image:
+      linear-gradient(45deg, transparent 50%, white 50%),
+      linear-gradient(135deg, white 50%, transparent 50%);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+
 @media only screen and (max-width: 600px) {
 
     #bookingFormContainer .selectionRow {
@@ -244,6 +313,18 @@
     }
 
     .checkListPage li {
+        font-size: 8pt;
+    }
+
+    #mapOptionsContainer {
+        padding: 5px;
+    }
+
+    #mapOptionsContainer .mapDivider {
+        height: 10px;
+    }
+
+    #mapOptionsContainer #locationSelector {
         font-size: 8pt;
     }
 
@@ -290,6 +371,7 @@
 }
 
 @media only screen and (max-width: 900px) {
+
     .holder2 {
         flex-direction: column;
     }

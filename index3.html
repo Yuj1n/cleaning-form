@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>A Cleaning Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="./js/components.js"></script>
+    <link rel="stylesheet" href="componentStyles.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        body>#react-container {
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="react-container"></div>
+    <script>
+        var mapPages = { brisbane: { location: "BRISBANE", key: "brisbane", map: "https://www.google.com/maps/d/embed?mid=1eFSM1_i7ivOP7zc18LB5hIWi1cI" }, goldCoast: { location: "GOLD COAST", key: "goldCoast", map: "https://www.google.com/maps/d/embed?mid=1hmEi9neDn_t5jzICPLLg0Y1QnIE" }, adelaide: { location: "ADELAIDE", key: "adelaide", map: "https://www.google.com/maps/d/embed?mid=135igwqwgZx11JEHXPs8uNUYtaov_HbL4" }, sunshineCoast: { location: "SUNSHINE COAST", key: "sunshineCoast", map: "https://www.google.com.au/maps/d/embed?mid=1l4d5vrdEF50F5xoQhPLS1La2B7E" } };
+    </script>
+    <script type="text/babel">
+      ReactDOM.render(
+        <InteractiveMap mapPages={mapPages} />,
+        document.getElementById('react-container')
+      );
+    </script>
+</body>
+
+</html>
