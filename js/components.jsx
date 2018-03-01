@@ -363,7 +363,7 @@ class InteractiveCheckList extends React.Component {
             className={this.getButtonClass(CLEANING_TYPES.REGULAR)}
             onClick={() => this.changeSelection(CLEANING_TYPES.REGULAR)}
           >
-            REGULAR
+            STANDARD
           </button>
           <button
             className={this.getButtonClass(CLEANING_TYPES.DEEP)}
